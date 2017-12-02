@@ -620,7 +620,7 @@ def bot(op):
                     cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
-            elif msg.text.lower() == 'set group':
+            elif msg.text.lower() == 'set Mer':
 				if msg.from_ in admin:
 					if wait["lang"] == "JP":
 						cl.sendText(msg.to,Setgroup)
