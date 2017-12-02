@@ -615,7 +615,7 @@ def bot(op):
 					cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
-            elif msg.text.lower() == 'Help':
+            elif msg.text.lower() == 'help':
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
@@ -1458,6 +1458,9 @@ def bot(op):
                 cl.sendText(msg.to, "please wait...")
                 elapsed_time = time.time() - start
                 cl.sendText(msg.to, "%ssecond" % (elapsed_time))
+                ki.sendText(msg.to, "%ssecond" % (elapsed_time)) 
+                kk.sendText(msg.to, "%ssecond" % (elapsed_time))
+                kc.sendText(msg.to, "%ssecond" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
@@ -1530,7 +1533,7 @@ def bot(op):
                     except:
                         pass
 
-            elif msg.text.lower() == 'ard out all':
+            elif msg.text.lower() == 'Mer out all':
 			  if msg.from_ in admsa:
 				gid = cl.getGroupIdsJoined()
 				gid = ki.getGroupIdsJoined()
@@ -1741,26 +1744,26 @@ thread2 = threading.Thread(target=nameUpdate)
 thread2.daemon = True
 thread2.start()
 
-def autolike():
-     for zx in range(0,100):
-        hasil = cl.activity(limit=200)
-        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-          try:    
-			cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by\nline.me/ti/p/~boy29putra")
-			ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			kc.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
-			print "Like"
-          except:
-            pass
-        else:
-            print "Sudah di Like Sayang"
-     time.sleep(200)
-thread2 = threading.Thread(target=autolike)
-thread2.daemon = True
-thread2.start()
-
+#def autolike():
+    # for zx in range(0,100):
+    #    hasil = cl.activity(limit=200)
+     #   if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
+      #    try:    
+	#		cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+	#		cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by\nline.me/ti/p/~boy29putra")
+	#		ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+	#		kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+	#		kc.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1003)
+	#		print "Like"
+         # except:
+          #  pass
+        #else:
+         #   print "Sudah di Like Sayang"
+     #time.sleep(200)
+#thread2 = threading.Thread(target=autolike)
+#thread2.daemon = True
+#thread2.start()
+#-------------:--------error----------------#
 while True:
     try:
         Ops = cl.fetchOps(cl.Poll.rev, 5)
