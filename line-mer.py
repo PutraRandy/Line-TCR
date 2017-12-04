@@ -113,7 +113,8 @@ Cmid = kc.getProfile().mid
  
 Bots=[mid,Amid,Bmid,Cmid,"u775173c903cf92984be4455642a78a29","u1b6482c4b9d7404a836243719c23e0e9","u55906eae1d1f364347734f8969ac7bac","u1a14951d93b38f703531edf0b1a7f65d"]
 admin=["u775173c903cf92984be4455642a78a29"]
-admsa=["u775173c903cf92984be4455642a78a29"]
+admsa=["u775173c903cf92984be4455642a78a29","u1b6482c4b9d7404a836243719c23e0e9","u55906eae1d1f364347734f8969ac7bac","u1a14951d93b38f703531edf0b1a7f65d"]
+DEF=["u1b6482c4b9d7404a836243719c23e0e9","u55906eae1d1f364347734f8969ac7bac","u1a14951d93b38f703531edf0b1a7f65d"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -544,7 +545,7 @@ def bot(op):
                             cl.updateGroup(G)
                         except:
                             cl.sendText(msg.to,"error")
-        if op.type == 26:
+        if op.type == 25:
             msg = op.message
             if msg.toType == 1:
                 if wait["leaveRoom"] == True:
@@ -619,7 +620,7 @@ def bot(op):
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
-                    cl.sendText(msg.to,helpt)
+                    cl.sendText(msg.to,help)
             elif msg.text.lower() == 'set Mer':
 				if msg.from_ in admin:
 					if wait["lang"] == "JP":
